@@ -27,7 +27,7 @@ public class DepartmentController {
     @PostMapping("/add-department-products")
     public ResponseEntity<Department> addproducts(@RequestBody@Valid DepartmentDto department ) {
 
-        return new ResponseEntity<>(departmentService.addProducts(department) , HttpStatus.OK);
+        return new ResponseEntity<>(departmentService.addProducts(department) , HttpStatus.CREATED);
     }
 
     /* get products br dept */
@@ -39,7 +39,7 @@ public class DepartmentController {
     /* add new product to the department */
     @PostMapping("/add-newproduct")
     public ResponseEntity<List<Product>>  addNewProduct(@RequestBody@Valid Department newProduct) throws NoContentAvailableException {
-        return new ResponseEntity<>(departmentService.addNewProduct(newProduct) , HttpStatus.OK);
+        return new ResponseEntity<>(departmentService.addNewProduct(newProduct) , HttpStatus.CREATED);
     }
 
     /*delete department by name */
